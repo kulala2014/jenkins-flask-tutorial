@@ -1,11 +1,12 @@
-FROM ubuntu: latest
+FROM ubuntu:latest
 MAINTAINER Kulala Gao "971366892@qq.com"
-RUN  apt-get update -y \
-    && apt-get install -y python-pip python-dev build-essential
+RUN apt-get update -y \
+    && apt-get install -y python3.4
+    && apt-get install -y python3-pip
 
 ADD . /flask-app
 WORKDIR /flask-app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
+RUN pip3 install -r requirements.txt
+ENTRYPOINT ["python3"]
 cmd ["flask_docker.py"]
 
