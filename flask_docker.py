@@ -6,5 +6,8 @@ app = Flask(__name__)
 def hello_world():
     return 'Flask Dockerized'
 
-if __name__ == "__main__":
+def main():
     app.run(debug=True, host='0.0.0.0')
+
+if __name__ == "__main__":
+    main()
